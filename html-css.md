@@ -45,7 +45,7 @@
         </ul>
         .example {
           color: blue;
-       }
+        }
 
 ###大小写
 
