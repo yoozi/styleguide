@@ -13,7 +13,6 @@
 嵌入式资源书写省略协议头
 
 >省略图像、媒体文件、样式表和脚本等URL协议头部声明 ( http: , https: )。如果不是这两个声明的URL则不省略。
-
 >省略协议声明，使URL成相对地址，防止内容混淆问题和导致小文件重复下载。
 
     <!-- 不推荐 -->
@@ -529,6 +528,6 @@
 
 ##来源
 
-[http://chajn.org/htmlcssguide/htmlcssguide.html#HTML_Style_Rules](http://chajn.org/htmlcssguide/htmlcssguide.html#HTML_Style_Rules)
+[http://chajn.org/htmlcssguide/htmlcssguide.html](http://chajn.org/htmlcssguide/htmlcssguide.html)
 
 [http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
