@@ -17,12 +17,15 @@
 
         <!-- 不推荐 -->
         <script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+
         <!-- 推荐 -->
         <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+
         /* 不推荐 */
         .example {
           background: url(http://www.google.com/images/example);
         }
+
         /* 推荐 */
         .example {
           background: url(//www.google.com/images/example);
@@ -52,6 +55,7 @@
 
         <!-- 不推荐 -->
         <A HREF="/">Home</A>
+
         <!-- 推荐 -->
         <img src="google.png" alt="Google">
 
@@ -63,6 +67,7 @@
 
         <!-- 不推荐 -->
         <p>What?_
+
         <!-- 推荐 -->
         <p>Yes please.
 
@@ -392,6 +397,7 @@
 
         /* 不推荐 */
         color: #eebbcc;
+
         /* 推荐 */
         color: #ebc;
 
@@ -470,6 +476,7 @@
           display: block;
           height: 100px
         }
+
         /* 推荐 */
         .test {
           display: block;
@@ -486,6 +493,7 @@
         h3 {
           font-weight:bold;
         }
+
         /* 推荐 */
         h3 {
           font-weight: bold;
@@ -501,6 +509,7 @@
         a:focus, a:active {
           position: relative; top: 1px;
         }
+
         /* 推荐 */
         h1,
         h2,
