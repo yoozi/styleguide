@@ -27,7 +27,7 @@
 _例外情况_：很多时候我们希望通过对齐某段代码从而使其更具可读性——此时可在行内使用空格。如下所示：
 
 
-```
+```php
 [tab]$foo   = 'somevalue';
 [tab]$foo2  = 'somevalue2';
 [tab]$foo34 = 'somevalue3';
@@ -36,7 +36,7 @@ _例外情况_：很多时候我们希望通过对齐某段代码从而使其更
 
 对于多维数组通常也存在此情况。例如：
 
-```
+```php
 $my_array = array(
 [tab]'foo'   => 'somevalue',
 [tab]'foo2'  => 'somevalue2',
@@ -49,7 +49,7 @@ $my_array = array(
 
 始终使用 [Allman 缩进](http://en.wikipedia.org/wiki/Indent_style#Allman_style)风格进行缩进：除了类（Class）声明之外，括号总是独占一行，且需缩进至当前控制语句同级，括号内语句需缩进至下一级别。
 
-```
+```php
 // 错误
 while (x == y) {
     something();
@@ -87,7 +87,7 @@ else
 
 错误做法：
 
-```
+```php
 <?php
 
 echo "Here's my code!";
@@ -97,7 +97,7 @@ echo "Here's my code!";
 
 正确做法：
 
-```
+```php
 <?php
 
 echo "Here's my code!";
@@ -107,3 +107,23 @@ echo "Here's my code!";
 ```
 
 _例外情况_： 本规则仅适用于纯 PHP 代码文件，混合代码文件（如视图）无需遵循。
+
+### 1.6 方括号及圆括号内的空格
+
+不要在方括号`[]`和圆括号`()`内增加任何空格符。
+
+```php
+// 错误：
+$arr[ $foo ] = 'foo';
+// 正确：
+$arr[$foo] = 'foo'; // no spaces around array keys
+
+// 错误：
+function foo ( $bar ) {}
+
+// 正确：
+function foo($bar) // no spaces around parenthesis in function declarations
+{
+
+}
+```
