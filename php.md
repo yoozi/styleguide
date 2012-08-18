@@ -1,4 +1,4 @@
-# 游子 PHP 程序代码编码规范
+# 游子 PHP 编码规范
 
 ## 0 Preface
 
@@ -6,16 +6,39 @@
 
 一切不按此编码规则行事者，都是**耍流氓**。
 
-## 1 约定
-
-## 1.1 文件编码
+## 1 文件编码
 
 请调整编辑器文件编码为 Unicode（UTF-8），并关闭 [UTF-8 BOM](http://en.wikipedia.org/wiki/Byte_order_mark) 功能。BOM 可能导致 PHP 产生预期之外的输出，从而中断正常运行的脚本程序（[抛出“headers already sent by”异常](http://stackoverflow.com/questions/8028957/headers-already-sent-by-php)）。
 
 注意：在任何情况下都不要使用 Windows 自带的记事本编辑项目文件。推荐使用 [Sublime Text 2](http://www.sublimetext.com/2) 编辑器作为日常开发编辑器，使用 [Vim](http://www.vim.org/download.php) 作为 Linux 环境下的文本编辑器。团队为开发人员准备了 ST2 的正版序列号，请邮件至 [support@yoozi.cn](support@yoozi.cn) 索要序列号。
 
-## 1.2 UNIX风格换行
+## 2 UNIX风格换行
 
 使用 UNIX 风格的换行符，即只有换行( LF 或 “\n”)没有回车( CR 或 “\r”)，请在你的编辑器内调整。
 
+## 3 代码缩进
 
+每次使用一个 tab （宽度：4）而非空格进行代码缩进，从而表现代码的逻辑结构。使用 tab 代替空格有利于那些阅读你代码的开发者在他们各自所使用的编辑器中自定义缩进方式。
+
+例外情况：很多时候我们希望能偶对齐某段代码从而使代码更具可读性——此时可在行内使用空格。如下所示：
+
+
+```
+[tab]$foo   = 'somevalue';
+[tab]$foo2  = 'somevalue2';
+[tab]$foo34 = 'somevalue3';
+[tab]$foo5  = 'somevalue4';
+```
+
+对于多维数组通常也存在此情况。例如：
+
+```
+$my_array = array(
+[tab]'foo'   => 'somevalue',
+[tab]'foo2'  => 'somevalue2',
+[tab]'foo3'  => 'somevalue3',
+[tab]'foo34' => 'somevalue3',
+);
+```
+
+对于代码缩进，我们的黄金准则是：**在行首使用 tab 缩进, 在行内使用空格。**
