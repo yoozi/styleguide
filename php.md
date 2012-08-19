@@ -545,7 +545,7 @@ private
 
 ### 6.3 行间空行的使用
 
-行间空行的使用是一门艺术，是程序员对代码节奏的控制。既然说它是艺术，那说明它并没有很好的规律可言。优秀的程序能够比较好的控制好空行的使用，从而提高代码的可读性。
+行间空行的使用是一门艺术，是程序员对代码节奏的控制。说它是艺术，是因为它并没有很好的规律可言。优秀的程序员能够比较好的控制好空行的使用，从而提高代码的可读性。
 
 我的经验：
 
@@ -622,11 +622,17 @@ public function render()
 }
 ```
 
-## 7 参考文档
+## 7 作者
+
+此处仅列出本文的主要撰写者：
+
+* Saturn：<yangg.hu@yoozi.cn>
+
+## 8 致谢
 
 感谢 [Wordpress](http://codex.wordpress.org/WordPress_Coding_Standards)、[CodeIgniter](http://codeigniter.org.cn/user_guide/general/styleguide.html)、[Typecho](http://docs.typecho.org/phpcoding) 三个优秀开源项目对本文档的贡献，向他们的作者致敬和感谢。
 
-## 8 改进本文
+## 9 参与互动
 
 通过如下两种方式之一来参与互动：
 
