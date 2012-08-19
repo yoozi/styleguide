@@ -624,8 +624,6 @@ public function render()
 
 ## 7 作者
 
-此处仅列出本文的主要撰写者：
-
 * Saturn：<yangg.hu@yoozi.cn>
 
 ## 8 致谢
@@ -636,5 +634,5 @@ public function render()
 
 通过如下两种方式之一来参与互动：
 
-* 请直接 fork 本项目，然后 pull request 即可。
+* 请直接 [fork 本项目](https://github.com/yoozi/styleguide)，然后 pull request 即可。
 * 直接提交[改进建议](https://github.com/yoozi/styleguide/issues/new)。
