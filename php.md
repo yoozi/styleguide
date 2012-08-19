@@ -108,7 +108,7 @@ if ( ! is_array($foo))
 
 有些 PHP 函数（如 `strpos`）在执行失败时会返回 `FALSE`，但由于它们也可能返回 `""` 和 `0` 这样的有效值——在逻辑判断时，`FALSE` / `""` / `0`三个中的任何一个值都会导致松散比较（`==`）返回 `FALSE`。处理此类函数需要尤其注意，否则松散比较可能会导致非期望的结果。
 
-对于所有需要通过比较、或判断返回值的场景下，请按需使用 `===` 和 `!==` 这样的操作符。
+对于所有需要通过比较、或判断返回值的场景，请按需使用 `===` 和 `!==` 这样的操作符。
 
 ```
 // 错误:
@@ -152,7 +152,7 @@ $str = (string) 123; // "123"
 
 ### 1.8 短标签
 
-请不要使用短标签：即简写 PHP 的开启标签、闭合标签。
+请不要使用短标签：即请不要简写 PHP 的开启标签、闭合标签。
 
 ```
 // 错误：
@@ -177,7 +177,11 @@ $bar = 'that';
 $bat = str_replace($foo, $bar, $bag);
 ```
 
-### 1.10 长语句请换行
+### 1.10 去除每行语句后面的空格
+
+请通过各编辑器的插件去除每行代码后面的空格。
+
+### 1.11 长语句请换行
 
 当语句过长、超过 80 个字符宽度时，请折行编写。折行的所有子语句需前进一个 tab 的宽度。
 
@@ -215,8 +219,8 @@ $query = $this->db->query("SELECT foo, bar, baz, foofoo, foobar AS raboof, fooba
 
 双引号仅用在如下场景中：
 
-* 没有需要解析的变量，但字符串中存在需要转义的内容（如单引号）。
-* 存在需要解析的变量。对于复杂的字符串，我们还推荐使用大括号对变量进行包裹，以防止变量最长贪婪匹配（greedy token parsing）。
+* 字符串中没有需要解析的变量，但字符串中存在需要转义的内容（如单引号）。
+* 字符串中存在需要解析的变量。对于复杂的字符串，我们还推荐使用大括号对变量进行包裹，以防止变量最长贪婪解析（greedy token parsing）。
 
 ```
 // 正确，但不够好：
@@ -314,10 +318,98 @@ foreach( $query->result() as $row )
 foreach ($query->result() as $row) // single space following PHP control structures, but not in interior parenthesis
 ```
 
-## 3.3 操作符空格的使用
+### 3.3 操作符空格的使用
 
 除了如 3.1 参数之间要使用空格外，所有操作符之间都要使用空格，包括字符连接符(.)。
 
 ```
 $host . ':' . $port
 ```
+
+## 4 命名规则
+
+### 4.1 文件命名
+
+大部分应用允许在 Linux 内核的服务器上，由于 Unix/Linux 操作系统对大小写敏感，所以请特别注意文件的大小写问题。
+
+对于内核使用 CodeIgniter 的应用，文件的命名基本遵循 CodeIgniter 框架对于不同类型文件制定的命名规则，简单来说：
+
+* [Controllers](http://codeigniter.com/user_guide/general/controllers.html)：控制器文件名称请小写，类名首字母需大写。
+* [Views](http://codeigniter.com/user_guide/general/views.html)：视图文件名称需小写。
+* [Models](http://codeigniter.com/user_guide/general/models.html)：模型文件名称需小写、类声明首字母需大写且与文件名匹配。
+* [Helpers](http://codeigniter.com/user_guide/general/helpers.html)：助手文件名称请小写，且增加 `_helper` 后缀。
+* [Libraries](http://codeigniter.com/user_guide/general/creating_libraries.html)：自定义类库文件首字母需大写、类声明首字母需大写且与文件名匹配。
+
+CodeIgniter 其他文件的命名规则，请通过 CodeIgniter [框架手册](http://codeigniter.com/user_guide/)了解详情。
+
+### 4.2 类和方法（函数）的命名
+
+* 当新引入的类主要用于拓展 CodeIgniter 内核，那么此类需要遵循 CodeIgniter [框架手册](http://codeigniter.com/user_guide/)中对于不同类型类文件的命名规则。
+* 当新引入的类是完整的第三方工具包，比如将 [Zend Framework](http://framework.zend.com/) 以 `third_party` 方式引入 CodeIgniter，此时仅需遵守引入的第三方工具包自身的命名规则即可。
+
+对于 CodeIgniter 中的类：类名的首字母应该大写。如果名称由多个词组成，词之间要用下划线分隔，不要使用骆驼命名法。类中所有其他方法的名称应该完全小写并且名称能明确指明这个函数的用途，最好用动词开头。尽量避免过长和冗余的名称。
+
+```
+// 不当的:
+class superclass
+class SuperClass
+
+// 适当的:
+class Super_class
+```
+
+```
+// 不当的:
+function fileproperties()  // 方法名没有清晰的描述以及下划线分割单词
+function fileProperties()  // 方法名没有清晰的描述以及使用了驼峰法命名
+function getfileproperties()  // 还可以!但是忘记了下划线分割单词
+function getFileProperties()  // 使用了驼峰法命名
+function get_the_file_properties_from_the_file() // 方法名太冗长
+
+// 适当的:
+function get_file_properties() // 清晰的方法名描述，下划线分割单词，全部使用小写字母
+```
+
+### 4.3 变量命名
+
+变量的命名规则与 4.2 中方法的命名规则类似：变量名应只包含小写字母、用下划线分隔、并能适当地指明变量的用途和内容。那些短的、无意义的变量名应该只作为迭代器用在 for() 循环里。
+
+```
+// 不当的:
+$j = 'foo';  // 单字符变量应该只作为 for() 的循环变量使用
+$Str   // 使用了大写字母
+$bufferedText  // 使用了驼峰命名，而且变量名应该更短，并有清晰的语法含义
+$groupid  // 多个词组，应该使用下划线分割
+$name_of_last_city_used // 太长了
+
+// 适当的:
+for ($j = 0; $j < 10; $j++)
+$str
+$buffer
+$group_id
+$last_city
+```
+
+### 4.4 常量命名
+
+常量命名除需全部大写外，其他的规则都和变量相同。在适当的时候，始终使用 CodeIgniter 定义好的常量，例如`LASH`, `LD`, `RD`, `PATH_CACHE`等等.
+
+```
+// 不当的:
+myConstant // 未使用下划线分割单词，未全部使用大写字母
+N  // 不能使用单个字母作为常量
+S_C_VER  // 常量名没有清晰的含义
+$str = str_replace('{foo}', 'bar', $str); // 应使用 LD 和 RD 两个预定义常量
+
+// 恰当的:
+MY_CONSTANT
+NEWLINE
+SUPER_CLASS_VERSION
+$str = str_replace(LD.'foo'.RD, 'bar', $str);
+```
+
+一般情况下请勿自定义常量，它会增加代码的维护成本。如果一定要增加常量，请尽量放置在如下两处：
+
+* 入口文件 index.php: 用来放置应用程序级别的常量，比如 app 路径。
+* 配置文件 config/constants.php：其他常用的常量，比如文件读写状态标识。
+
