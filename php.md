@@ -45,9 +45,63 @@ $my_array = array(
 );
 ```
 
-### 1.4 缩进风格
+### 1.4 PHP 闭合标签
 
-始终使用 [Allman 缩进](http://en.wikipedia.org/wiki/Indent_style#Allman_style)风格进行缩进：除了类（Class）声明之外，括号总是独占一行，且需缩进至当前控制语句同级，括号内语句需缩进至下一级别。
+所有 PHP 文件应该省略这个 `?>` 闭合标签，并插入一段注释来标明这是文件的底部。底部注释需要正确插入文件路径和名称。
+
+错误：
+
+```
+<?php
+
+echo "Here's my code!";
+
+?>
+```
+
+正确：
+
+```
+<?php
+
+echo "Here's my code!";
+
+/* End of file myfile.php */
+/* Location: ./system/modules/mymodule/myfile.php */
+```
+
+_例外情况_：本规则仅适用于纯 PHP 代码文件，混合代码文件（如视图）无需遵循。
+
+### 1.5 TRUE, FALSE 和 NULL
+
+布尔（boolean）常量关键字 `TRUE`与`FALSE`、以及空值常量关键字`NULL`应始终保持大写。
+
+```
+if ($foo == TRUE)
+$bar = FALSE;
+function foo($bar = NULL)
+return TRUE;
+```
+
+### 1.6 OR, AND 和 !
+
+对于逻辑操作符，使用英文关键字`OR`和`AND`来分别替代他们的简化符号写法`||`和`&&`。原因是，在部分特殊显示外设下，`||`会被识别为`11`。
+
+```
+if ($foo OR $bar)
+if ($foo AND $bar) // recommended
+```
+
+逻辑关键字与非`!`出现时，应保证其前后分别存在一个空格：
+
+```
+if ( ! $foo)
+if ( ! is_array($foo))
+```
+
+## 2 大括号放置
+
+始终使用 [Allman 缩进](http://en.wikipedia.org/wiki/Indent_style#Allman_style)风格进行大括号的放置与代码缩进：除了类（Class）声明之外，括号总是独占一行，且需缩进至当前控制语句同级，括号内语句需缩进至下一级别。
 
 ```
 // 错误
@@ -81,34 +135,17 @@ else
 }
 ```
 
-### 1.5 PHP 闭合标签
+## 3 逗号与空格
 
-所有 PHP 文件应该省略这个 `?>` 闭合标签，并插入一段注释来标明这是文件的底部。底部注释需要正确插入文件路径和名称。
+### 3.1 逗号放置
 
-错误：
-
-```
-<?php
-
-echo "Here's my code!";
-
-?>
-```
-
-正确：
+函数中用逗号来分隔参数，所有的参数与前面的逗号之间要空格(第一个参数除外)。
 
 ```
-<?php
-
-echo "Here's my code!";
-
-/* End of file myfile.php */
-/* Location: ./system/modules/mymodule/myfile.php */
+public function connect($host, $port, $db, $user, $password, $charset = NULL)
 ```
 
-_例外情况_：本规则仅适用于纯 PHP 代码文件，混合代码文件（如视图）无需遵循。
-
-### 1.6 方括号及圆括号内的空格
+### 3.2 方括号及圆括号内的空格
 
 不要在方括号`[]`和圆括号`()`内增加任何空格符。
 
@@ -136,4 +173,12 @@ foreach( $query->result() as $row )
 
 // 正确：
 foreach ($query->result() as $row) // single space following PHP control structures, but not in interior parenthesis
+```
+
+## 3.3 操作符空格的使用
+
+除了如 3.1 参数之间要使用空格外，所有操作符之间都要使用空格，包括字符连接符(.)。
+
+```
+$host . ':' . $port
 ```
