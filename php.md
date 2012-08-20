@@ -456,9 +456,9 @@ $str = str_replace(LD.'foo'.RD, 'bar', $str);
  /**
  * Encodes string for use in XML
  *
- * @todo security check
+ * @todo   security check
  * @access public
- * @param string
+ * @param  string
  * @return string
  */
 function xml_encode($str)
