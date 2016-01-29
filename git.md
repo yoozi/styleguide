@@ -149,3 +149,19 @@ fix/xxx     | 修复功能
     * 版本号更新
 
         格式： `Bump version: 0.1.2-dev → 0.1.2`
+
+
+参考资料
+==========
+
+https://ruby-china.org/topics/15737
+
+https://github.com/erlang/otp/wiki/Writing-good-commit-messages
+
+https://www.gitignore.io
+
+https://github.com/thephpleague/skeleton
+
+https://www.reddit.com/r/PHP/comments/2jzp6k/i_dont_need_your_tests_in_my_production
+
+https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
