@@ -82,10 +82,8 @@ ILoginServerImp.java
        字母全部大写,格式:类型\_名称, 多个单词用"_"连接.  
        注：关键常量请给出注释
     ```java
-
     //最大连接数量
     final int INT_MAX_CONNECTION_COUNTS = 1000 ;
-
     ```
 
   * 成员变量   
