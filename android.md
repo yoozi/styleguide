@@ -40,13 +40,10 @@ ILoginServerImp.java
 ***/
 
 ```
-
-
-
  * package 部分  
  独立一行,并且下一行空出.
 
-* import 部分
+ * import 部分
  该部分的引入顺序为:   
  1.jdk相关文件  
  2.Android SDK 相关文件  
@@ -55,10 +52,8 @@ ILoginServerImp.java
 
  **注:以上顺序之间均空出一行**
 
-
  * Class注释  
  位于import之下，Class声明之上.
-
 
  ```java
  /***
@@ -120,7 +115,7 @@ ILoginServerImp.java
      public boolean uploadAvator(File filePath) {
 
 
-          re
+          return true;
        }
 
     ```
