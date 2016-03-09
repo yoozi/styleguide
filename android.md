@@ -35,14 +35,14 @@ ILoginServerImp.java
  * 版权声明   
 位于文件开始出，采用多行注释风格,首行和尾行空出来.
 
-```java
-/***
+ ```java
+ /***
 
-版权描述
+ 版权描述
 
-***/
+ ***/
 
-```
+ ```
  * package 部分  
  独立一行,并且下一行空出.
 
@@ -53,7 +53,7 @@ ILoginServerImp.java
  2.Android SDK 相关文件  
  3.第三方开源相关文件  
  4.本项目相关文件
-    
+ 注：顺序之间留出一行空白   
     
 * Class注释  
  位于import之下，Class声明之上. 
@@ -77,11 +77,11 @@ ILoginServerImp.java
  
  
  
- **注 ：   
+ 注 ：   
  
  创建者 可以不用写修改部分 
  
- 修改者 禁止修改原注释,添加修改消息必须用"=====" 分割  
+ 修改者 禁止修改原注释,添加修改消息必须用"=====" 分割 
 
 * Class 部分
    *  类名  
@@ -157,14 +157,16 @@ ILoginServerImp.java
       格式 ： layout\_{使用的组件类别}\_{使用的Class名称的内容单词}.xml
    * 控件id   
       格式 ：{2个以上单词取每个单词首字母 | 一个单词取开头3个字母}_{代表的内容名称}
-      
-   ```   
-   layout_activtiy_login.xml  
-   item_listview_contacts.xml
-   ```
+
+      ```   
+     
+      layout_activtiy_login.xml  
+     item_listview_contacts.xml
+     
+      ```  
+     
    
-       ```xml
-    
+      ```xml
     <ImageView
         android:id="@+id/iv_avator"
         android:layout_width="250dp"
@@ -177,8 +179,7 @@ ILoginServerImp.java
         android:layout_height="200dp"
         android:text="Login"
         />
-   
-       ```
+    ```
      
  * Drawable文件
    * xml文件名  
