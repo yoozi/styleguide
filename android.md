@@ -52,7 +52,7 @@ ILoginServerImp.java
  1.jdk相关文件  
  2.Android SDK 相关文件  
  3.第三方开源相关文件  
- 4.本项目相关文件
+ 4.本项目相关文件  
  注：顺序之间留出一行空白   
     
 * Class注释  
