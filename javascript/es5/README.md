@@ -1,4 +1,4 @@
-# 游子 JavaScript 编码规范
+# 游子 JavaScript (ES5) 编码规范
 
 
 ## <a name="table-of-contents">目录</a>
