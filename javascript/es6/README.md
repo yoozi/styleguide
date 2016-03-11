@@ -1,11 +1,9 @@
-
-
 # 游子 JavaScript (ES6) 编码规范
 
-### 基于 ES5 规范，补充 ES6 新特性
+> 基于 ES5 规范，补充 ES6 新特性
 
 
-## 对象
+## 1 对象
 
   - 创建有动态属性名的对象时，使用可被计算的属性名称。
 
@@ -16,14 +14,6 @@
       return `a key named ${k}`;
     }
 
-    // bad
-    const obj = {
-      id: 5,
-      name: 'San Francisco',
-    };
-    obj[getKey('enabled')] = true;
-
-    // good
     const obj = {
       id: 5,
       name: 'San Francisco',
@@ -34,16 +24,6 @@
   - 使用对象方法的简写。
 
     ```javascript
-    // bad
-    const atom = {
-      value: 1,
-
-      addValue: function (value) {
-        return atom.value + value;
-      },
-    };
-
-    // good
     const atom = {
       value: 1,
 
@@ -71,37 +51,10 @@
     };
     ```
 
-  - 在对象属性声明前把简写的属性分组。
-
-  > 为什么？因为这样能清楚地看出哪些属性使用了简写。
-
-    ```javascript
-    const anakinSkywalker = 'Anakin Skywalker';
-    const lukeSkywalker = 'Luke Skywalker';
-
-    // bad
-    const obj = {
-      episodeOne: 1,
-      twoJedisWalkIntoACantina: 2,
-      lukeSkywalker,
-      episodeThree: 3,
-      mayTheFourth: 4,
-      anakinSkywalker,
-    };
-
-    // good
-    const obj = {
-      lukeSkywalker,
-      anakinSkywalker,
-      episodeOne: 1,
-      twoJedisWalkIntoACantina: 2,
-      episodeThree: 3,
-      mayTheFourth: 4,
-    };
-    ```
+  - 在对象属性声明前把简写的属性分组写在一起。
 
 
-## 数组
+## 2 数组
   
   - 使用拓展运算符 `...` 复制数组。
 
@@ -126,7 +79,7 @@
     ```
 
 
-## 解构
+## 3 解构
 
   - 使用解构存取和使用多属性对象。
 
@@ -190,8 +143,7 @@
     ```
 
 
-<a name="strings"></a>
-## Strings
+## 4 字符串
 
   - 程序化生成字符串时，使用模板字符串代替字符串连接。
 
@@ -215,8 +167,7 @@
     ```
 
 
-<a name="functions"></a>
-## 函数
+## 5 函数
 
   - 使用函数声明代替函数表达式。
 
@@ -322,7 +273,7 @@
   ```
 
 
-## 箭头函数
+## 6 箭头函数
 
   - 当你必须使用函数表达式（或传递一个匿名函数）时，使用箭头函数符号。
 
@@ -359,7 +310,7 @@
     ```
 
 
-## 构造器
+##  7构造器
 
   - 总是使用 `class`。避免直接操作 `prototype` 。
 
@@ -449,7 +400,7 @@
       .setHeight(20);
     ```
 
-## 模块
+## 8 模块
 
   - 总是使用模组 (`import`/`export`) 而不是其他非标准模块系统。你可以编译为你喜欢的模块系统。
 
@@ -496,7 +447,7 @@
     export default es6;
     ```
 
-## Iterators and Generators
+## 9 Iterators and Generators
 
   - 不要使用 iterators。使用高阶函数例如 `map()` 和 `reduce()` 替代 `for-of`。
 
@@ -528,7 +479,7 @@
   > 为什么？因为它们现在还没法很好地编译到 ES5。
 
 
-## 变量
+## 10 变量
 
  - 对所有的引用使用 `const` ; 避免使用 `var`。
 
@@ -695,34 +646,11 @@
     [Read more](http://stackoverflow.com/a/7365214/1712802).
 
 
-## 命名规则
-
-  - 使用驼峰式命名对象、函数和实例。
-
-    ```javascript
-    // bad
-    const OBJEcttsssss = {};
-    const this_is_my_object = {};
-    function c() {}
-
-    // good
-    const thisIsMyObject = {};
-    function thisIsMyFunction() {}
-    ```
+## 11 命名规则
 
   - 使用帕斯卡式命名构造函数或类。
 
     ```javascript
-    // bad
-    function user(options) {
-      this.name = options.name;
-    }
-
-    const bad = new user({
-      name: 'nope',
-    });
-
-    // good
     class User {
       constructor(options) {
         this.name = options.name;
@@ -734,17 +662,6 @@
     });
     ```
 
-  - 使用下划线 `_` 开头命名私有属性。
-
-    ```javascript
-    // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-
-    // good
-    this._firstName = 'Panda';
-    ```
-
   - 别保存 `this` 的引用。使用箭头函数或 Function#bind。
 
     ```javascript
@@ -753,14 +670,6 @@
       const self = this;
       return function() {
         console.log(self);
-      };
-    }
-
-    // bad
-    function foo() {
-      const that = this;
-      return function() {
-        console.log(that);
       };
     }
 
@@ -813,12 +722,12 @@
     ```
 
 
-## ECMAScript 6 兼容性
+## 12 ECMAScript 6 兼容性
 
   - 参考 [Kangax](https://twitter.com/kangax/) 的 ES6 [兼容性](http://kangax.github.io/compat-table/es6/).
 
 
-## 资源
+## 13 资源
 
 **Learning ES6**
 
@@ -828,6 +737,6 @@
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
   - [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
-## 参考链接
+## 14 参考链接
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
