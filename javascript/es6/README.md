@@ -1,4 +1,4 @@
-# 游子 JavaScript (ES6) 编码规范
+# JavaScript (ES6) 编码规范
 
 > 基于 ES5 规范，补充 ES6 新特性
 

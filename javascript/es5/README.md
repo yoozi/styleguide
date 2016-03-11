@@ -1,4 +1,4 @@
-# 游子 JavaScript (ES5) 编码规范
+# JavaScript (ES5) 编码规范
 
 
 
