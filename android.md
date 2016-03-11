@@ -1,4 +1,4 @@
-## Alpha智能科技事业部 Android 编码规范
+## Alpha 智能科技事业部 Android 编码规范
 
 ### 声明
 
@@ -209,7 +209,6 @@ ILoginServerImp.java
    格式 ：{简述1}\_{简述2}
    
    ```
-   <?xml version="1.0" encoding="utf-8"?>
    <resources>
     	<color name="primary">#3F51B5</color>
     	<color name="primary_dark">#303F9F</color>
